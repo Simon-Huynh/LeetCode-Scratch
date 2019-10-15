@@ -4,3 +4,4 @@
 
 Finished: 
   - Problem 1: Two Sum (Easy) https://leetcode.com/problems/two-sum/
+  - Problem 217: Contains Duplicate (Easy) https://leetcode.com/problems/contains-duplicate/
