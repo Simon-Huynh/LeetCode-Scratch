@@ -21,7 +21,7 @@ class Solution {
     public static int[] twoSumHashTable(int[] nums, int target) {
         HashMap<Integer, Integer> OnePassHashMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            int complement = Math.abs(target - nums[i]); 
+            int complement = target - nums[i]; 
             if (OnePassHashMap.containsKey(complement)) {
                 return new int[]{OnePassHashMap.get(complement), i}; 
             }
