@@ -28,25 +28,19 @@ class Solution {
             int palinLength1 = expandAroundCenter(s, i, i + 1); 
 
             int bestPalindrome = Math.max(palinLength0, palinLength1); 
-            if (bestPalindrome > right-left+1) {
+            if (bestPalindrome > right - left + 1) {
                 if (bestPalindrome == palinLength0) {
-                    // If center one character
+                    // If center one character, we know length is odd 
+                    right = i + ((bestPalindrome - 1 ) / 2); 
+                    left = i - ((bestPalindrome - 1) / 2); 
                 } else if (bestPalindrome == palinLength1) {
-                    // If center two characters
+                    // If center two characters, we know length is even 
+                    right = i + (bestPalindrome / 2); 
+                    left = i - ((bestPalindrome / 2) - 1); 
                 }
             }
         }
-
-        // string babad
-        //        01234
-        // i is 1, length is 3
-        // left = 0, right = 2 
-
-        // string cbbd
-        //        0123
-        // i is 1 or 2, length is 2
-        // left = 1, right = 2
-
+        return s.substring(left, right + 1); 
     }
 
     // Helper function that returns length of the palindrome created from that center. 
@@ -58,11 +52,14 @@ class Solution {
         // Solution says this is right - left - 1. Why? Doesn't index 2 and 0 mean length of palindrome is 3?
         // I see now. It's because if in 012345 and the entire thing is a palindrome, we'll actually end up with 
         // (-1, 6). Because 0 and 5 are going to satisfy the while loop and they will both be incremented/decremented
-        // So to account for this, we subtract 2 to the right - left - 1 to account for those two characters. 
+        // So to account for this, we subtract 2 to the right - left + 1 to account for those two characters steps. 
         return right - left + 1 - 2;
     }
 
     public static void main(String[] args) {
+        // System.out.println(2 - (4-1) / 2); 
+        // System.out.println(expandAroundCenter("babad", 1, 1)); 
+        // System.out.println(expandAroundCenter("babad", 1, 2)); 
         System.out.println(longestPalindrome(null)); 
         System.out.println(longestPalindrome("")); 
         System.out.println(longestPalindrome("babad")); 
