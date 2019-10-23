@@ -22,10 +22,21 @@ public class ListNode {
 }
 
 class Solution {
-    public ListNode reverseListIterative(ListNode head) {
-        // Iterate through linked list, could store values. Iterate through it in reverse, create new one. 
-        // Or could just reverse the pointers as we iterate through. Using pointers to keep track of previous and current node. 
-        return new ListNode(0); 
+    public ListNode reverseListIterative(ListNode head) { 
+        ListNode previous = null; 
+        ListNode current = head; 
+        ListNode next = current != null ? current.next : null; 
+        while(next != null) {
+            current.next = previous;
+            previous = current; 
+            current = next; 
+            next = next.next;  
+            // if (previous != null) { System.out.println("previous " + previous.val); }
+            // if (current != null) { System.out.println("current " + current.val); }
+            // if (next != null) { System.out.println("next " + next.val); }
+            // System.out.println("-------");
+        }
+        return current; 
     }
     
     public ListNode reverseListRecursive(ListNode head) {
