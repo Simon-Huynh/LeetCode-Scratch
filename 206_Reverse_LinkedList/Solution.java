@@ -22,25 +22,22 @@ public class ListNode {
 }
 
 class Solution {
+    // Implementation returning current doesn't work because if next is null, it breaks 
     public ListNode reverseListIterative(ListNode head) { 
         ListNode previous = null; 
         ListNode current = head; 
-        ListNode next = current != null ? current.next : null; 
-        while(next != null) {
+        ListNode next;
+        while(current != null) {
+            next = current.next; 
             current.next = previous;
             previous = current; 
             current = next; 
-            next = next.next;  
-            // if (previous != null) { System.out.println("previous " + previous.val); }
-            // if (current != null) { System.out.println("current " + current.val); }
-            // if (next != null) { System.out.println("next " + next.val); }
-            // System.out.println("-------");
         }
-        return current; 
+        return previous; 
     }
     
     public ListNode reverseListRecursive(ListNode head) {
-        // Recursively? Call function on the next node until we reach the end. Swap with the previous node. 
+        // Recursive implementation. Would be same runtime but O(n) space complexity due to stack size. 
         return new ListNode(0); 
     }
 
