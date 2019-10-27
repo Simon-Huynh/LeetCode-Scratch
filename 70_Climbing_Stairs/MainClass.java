@@ -23,8 +23,45 @@
 import java.io.*; 
 
 class Solution {
-    public int climbStairs(int n) {
-        return 0;
+    public int climbStairsTimeout(int n) {
+        // There are only two ways to reach a step. By 1 step, or by 2 steps. Use this information. 
+        // Base case 1. Only one way. Base case 2. Two ways, 1-1, or with a single 2 step. 
+        // Reurrence will be F[n] = F[n-1] + F[n-2]
+        if (n < 1) { return 0; }
+        if (n == 1) { return 1; }
+        if (n == 2) { return 2; }
+        return climbStairs(n-1) + climbStairs(n-2); 
+        // Solution works on local. But times out on leetcode submission of input 44. 
+    }
+
+    public int climbStairsLottaSpace(int n) {
+        // Want to build on earlier solution by including some sort of memoization for optimization.
+        if (n == 1 ) { return 1; }
+        int[] solutionArray = new int[n+1]; 
+        solutionArray[0] = 0; 
+        solutionArray[1] = 1; 
+        solutionArray[2] = 2; 
+        for (int i = 3; i <= n; i++) { 
+            solutionArray[i] = solutionArray[i-1] + solutionArray[i-2]; 
+        }
+        return solutionArray[n]; 
+    }
+
+    public int climbStairs(int n) { 
+        // How can we improve upon this by not using the array? 
+        // If at step n, we only really need to know result of n-1 and n-2. 
+        if (n == 1) { return 1; }
+        if (n == 2) { return 2; } 
+        int resultOneDown = 2; 
+        int resultTwoDown = 1; 
+        int result = 0; 
+        for (int i = 3; i <= n; i++) {
+            result = resultOneDown + resultTwoDown; 
+            resultTwoDown = resultOneDown; 
+            resultOneDown = result; 
+        }
+        return result; 
+        // Weird. After running this on leetcode it's about the same memory space. 
     }
 }
 
@@ -33,13 +70,15 @@ public class MainClass {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String line;
         while ((line = in.readLine()) != null) {
+            System.out.print("In :" + line); 
+
             int n = Integer.parseInt(line);
 
             int ret = new Solution().climbStairs(n);
 
             String out = String.valueOf(ret);
 
-            System.out.print(out);
+            System.out.println(" Out:" + out);
         }
     }
 }
