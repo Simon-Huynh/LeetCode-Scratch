@@ -48,7 +48,7 @@ class Solution {
     }
 
     public int climbStairs(int n) { 
-        // How can we improve upon this by not using the array? 
+        // How can we improve upon this by not using the array with O(n) space complexity? 
         // If at step n, we only really need to know result of n-1 and n-2. 
         if (n == 1) { return 1; }
         if (n == 2) { return 2; } 
@@ -62,6 +62,7 @@ class Solution {
         }
         return result; 
         // Weird. After running this on leetcode it's about the same memory space. 
+        // Theoretically, this should be constant memory space. 
     }
 }
 

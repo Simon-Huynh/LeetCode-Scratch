@@ -9,3 +9,4 @@ Finished:
   - Problem 121: Best Time to Buy and Sell Stock (Easy) https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
   - Problem 5: Longest Palindromic Substring (Medium) https://leetcode.com/problems/longest-palindromic-substring/
   - Problem 206: Reverse Linked List (Easy) https://leetcode.com/problems/reverse-linked-list/
+  - Problem 70: Climbing Stairs (Easy) https://leetcode.com/problems/climbing-stairs
