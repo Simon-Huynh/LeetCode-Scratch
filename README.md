@@ -2,7 +2,7 @@
 
   - Using https://www.teamblind.com/article/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU as problem choosing guideline. 
 
-Finished: 
+Finished (In Order of Completion): 
   - Problem 1: Two Sum (Easy) https://leetcode.com/problems/two-sum/
   - Problem 217: Contains Duplicate (Easy) https://leetcode.com/problems/contains-duplicate/
   - Problem 371: Sum of Two Integers (Easy) https://leetcode.com/problems/sum-of-two-integers/
