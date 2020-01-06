@@ -11,3 +11,4 @@ Finished (In Order of Completion):
   - Problem 206: Reverse Linked List (Easy) https://leetcode.com/problems/reverse-linked-list/
   - Problem 70: Climbing Stairs (Easy) https://leetcode.com/problems/climbing-stairs
   - Problem 104: Maximum Depth of Binary Tree (Easy) https://leetcode.com/problems/maximum-depth-of-binary-tree/
+  - Problem 3: Longest Substring Without Repeating Characters (Medium) https://leetcode.com/problems/longest-substring-without-repeating-characters/
