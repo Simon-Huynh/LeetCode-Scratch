@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 // Given a string, find the length of the longest substring without repeating characters.
 
 // Example 1:
@@ -42,28 +44,23 @@ class Solution {
 
     // Sliding window solution, linear time O(n)
     // Is actually O(2n), O(n) for the i and j traversals of string. 
-    // If we increment i, we don't have to reset j, because we've already found a substring 
-    // that is larger than the substrings that we missed. 
+    // Implement sliding window using hashset. Sliding window is active 
+    // until the right boundary reaches the end of string. 
     public static int lengthOfLongestSubstringWindow(String s) { 
-        int n = s.length();
-        Set<Character> set = new HashSet<>();
-        int ans = 0, i = 0, j = 0;
-        while (i < n && j < n) {
-            // try to extend the range [i, j]
-            if (!set.contains(s.charAt(j))){
-                // If set does not contain j, increment j to increase sliding window on the right. 
-                set.add(s.charAt(j));
-                j++; 
-                ans = Math.max(ans, j - i);
-                System.out.println(set + ", ans: " + ans); 
-            } else {
-                // If set does contain item j, we've found the largest substring starting from character i. 
-                set.remove(s.charAt(i));
+        int longest = 0, i = 0, j = 0; 
+        int length = s.length(); 
+        HashSet<Character> substring = new HashSet<Character>(); 
+        while (j < length) {
+            if (substring.contains(s.charAt(j))) { 
+                substring.remove(s.charAt(i)); 
                 i++; 
-                System.out.println(set + ", i removed: " + s.charAt(i-1)); 
+            } else { 
+                substring.add(s.charAt(j)); 
+                j++; 
+                longest = Math.max(longest, j-i); 
             }
         }
-        return ans;
+        return longest; 
     }
 
     public static void main(String[] args) {
