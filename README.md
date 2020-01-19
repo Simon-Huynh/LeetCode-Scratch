@@ -12,4 +12,4 @@ Finished (In Order of Completion):
   - Problem 70: Climbing Stairs (Easy) https://leetcode.com/problems/climbing-stairs
   - Problem 104: Maximum Depth of Binary Tree (Easy) https://leetcode.com/problems/maximum-depth-of-binary-tree/
   - Problem 3: Longest Substring Without Repeating Characters (Medium) https://leetcode.com/problems/longest-substring-without-repeating-characters/
-  - Problem 53: Maximum Subarray https://leetcode.com/problems/maximum-subarray/
+  - Problem 53: Maximum Subarray (Easy) https://leetcode.com/problems/maximum-subarray/
