@@ -23,16 +23,53 @@ class ListNode {
 }
 
 class Solution {
+    // Time limit exceeded when ran on Leetcode. Ah, when two node values are equal. 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        // How to elegantly merge two linked lists? 
-        // Let's say we have [1,3,5] and [2,4]. 
-        // return new ListNode(0); 
+        if (l1 == null) { return l2; }
+        if (l2 == null) { return l1; }
+        ListNode temp, head;
+        if (l1.val < l2.val) { 
+            head = l1; 
+            l1 = l1.next; 
+        } else {
+            head = l2; 
+            l2 = l2.next; 
+        }
+        temp = head; 
+        while (l1 != null || l2 != null) {
+            // System.out.println(HelperClass.listNodeToString(head)); 
+            // System.out.println("++l1: " + HelperClass.listNodeToString(l1)); 
+            // System.out.println("++l2: " + HelperClass.listNodeToString(l2));
+            if (l1 == null) { temp.next = l2; break;}
+            if (l2 == null) { temp.next = l1; break;}
+            if (l1.val < l2.val || l1.val == l2.val) { 
+                temp.next = l1; 
+                temp = temp.next; 
+                l1 = l1.next; 
+            } else if (l2.val < l1.val) {
+                temp.next = l2; 
+                temp = temp.next; 
+                l2 = l2.next; 
+            }
+            // System.out.println("--l1: " + HelperClass.listNodeToString(l1));
+            // System.out.println("--l2: " + HelperClass.listNodeToString(l2));
+        }
+        return head; 
     }
 
     public static void main(String[] args) {
-        HelperClass helper = new HelperClass();
-        // Test cases go here. 
-        System.out.println(helper.listNodeToString(mergeTwoLists(helper.stringToListNode("[1,3,5]"), helper.stringToListNode("[2,4,6]")))); 
+        System.out.println(HelperClass.listNodeToString(
+            mergeTwoLists(HelperClass.stringToListNode("[1,3,5]"), HelperClass.stringToListNode("[2,4,6]"))));
+        System.out.println(HelperClass.listNodeToString(
+            mergeTwoLists(HelperClass.stringToListNode("[1]"), HelperClass.stringToListNode("[2]"))));
+        System.out.println(HelperClass.listNodeToString(
+            mergeTwoLists(HelperClass.stringToListNode("[1]"), HelperClass.stringToListNode("[2,4,5,6,7,8]"))));
+        System.out.println(HelperClass.listNodeToString(
+            mergeTwoLists(HelperClass.stringToListNode("[1,2,4]"), HelperClass.stringToListNode("[1,3,4]"))));
+        System.out.println(HelperClass.listNodeToString(
+            mergeTwoLists(HelperClass.stringToListNode("[]"), HelperClass.stringToListNode("[]"))));
+        System.out.println(HelperClass.listNodeToString(
+            mergeTwoLists(HelperClass.stringToListNode("[]"), HelperClass.stringToListNode("[19]"))));
     }
 }
 
