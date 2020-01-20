@@ -124,8 +124,8 @@ class HelperClass {
             ListNode l1 = stringToListNode(line);
             line = in.readLine();
             ListNode l2 = stringToListNode(line);
-
-            ListNode ret = new Solution().mergeTwoLists(l1, l2);
+            
+            ListNode ret = Solution.mergeTwoLists(l1, l2);
 
             String out = listNodeToString(ret);
 
