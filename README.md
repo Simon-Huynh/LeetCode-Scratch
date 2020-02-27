@@ -14,3 +14,4 @@ Finished (In Order of Completion):
   - Problem 3: Longest Substring Without Repeating Characters (Medium) https://leetcode.com/problems/longest-substring-without-repeating-characters/
   - Problem 53: Maximum Subarray (Easy) https://leetcode.com/problems/maximum-subarray/
   - Problem 21: Merge Two Sorted Lists (Easy) https://leetcode.com/problems/merge-two-sorted-lists/
+  - Problem 704: Binary Search (Easy) https://leetcode.com/problems/binary-search/
