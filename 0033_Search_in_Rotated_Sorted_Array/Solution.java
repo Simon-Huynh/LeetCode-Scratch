@@ -22,11 +22,9 @@ class Solution {
         while (l <= r) {
             pivot = l + ((r - l) / 2);
             if (target == nums[pivot]) {
-                // If target is equal to the value at the pivot, there is rotation. 
                 return pivot;
             } else if (nums[pivot] > nums[r]) {
                 // If the pivot is greater than the right, there is rotation. 
-                // If we know the break is on the right, we can prune out the left side. 
                 // If the target is greater than the pivot or less than the left value. THEN we can prune the left. 
                 // We need both of those checks as the right side contains values less than the left as well as 
                 //  those greater than the pivot. 
@@ -37,7 +35,6 @@ class Solution {
                 }
             } else if (nums[pivot] < nums[l]) { 
                 // If the pivot is less than the left, there is rotation. 
-                // If we know the break is on the left, we can prune out the right side. 
                 if (target < nums[pivot] || target > nums[r]) { 
                     r = pivot - 1; 
                 } else { 
