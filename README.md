@@ -16,3 +16,4 @@ Finished (In Order of Completion):
   - Problem 21: Merge Two Sorted Lists (Easy) https://leetcode.com/problems/merge-two-sorted-lists/
   - Problem 704: Binary Search (Easy) https://leetcode.com/problems/binary-search/
   - Problem 33: Search in Rotated Sorted Array (Medium) https://leetcode.com/problems/search-in-rotated-sorted-array/
+  - Problem 20: Valid Parentheses (Easy) https://leetcode.com/problems/valid-parentheses/
