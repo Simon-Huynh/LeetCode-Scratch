@@ -12,27 +12,23 @@
 
 import java.util.*; 
 import java.lang.*; 
-import javax.json.JsonArray; 
 
 class Solution { 
-    public int[][] merge(int[][] intervals) {
+    public static int[][] merge(int[][] intervals) {
+        // I don't think we can assume that the intervals are sorted by their first point. 
+        // If we have sorted intervals [a1, b1] and [a2, b2] where a1 <= a1. They are 
+        // overlapping if b1 is within the interval [a2, b2] inclusive. So if we do a sort on the 
+        // collection based on the starting index of the intervals. Then we can just iterate through 
+        // the sorted array of intervals and merge the ones based on conditions defined above. 
+        
+        // First just use a collection library to sort. See if we can make it work. 
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] a, int[] b) {
+                return Integer.compare(a[0], b[0]); 
+            }
+        }); 
         return intervals; 
-    }
-
-    public static int[] stringToIntegerArray(String input) {
-        input = input.trim();
-        input = input.substring(1, input.length() - 1);
-        if (input.length() == 0) {
-            return new int[0];
-        }
-
-        String[] parts = input.split(",");
-        int[] output = new int[parts.length];
-        for (int index = 0; index < parts.length; index++) {
-            String part = parts[index].trim();
-            output[index] = Integer.parseInt(part);
-        }
-        return output;
     }
 
     public static String int2dArrayToString(int[][] array) {
@@ -52,22 +48,9 @@ class Solution {
         sb.setCharAt(sb.length() - 1, ']');
         return sb.toString();
     }
-    
-    public static int[][] stringToInt2dArray(String input) {
-        JsonArray jsonArray = JsonArray.readFrom(input);
-        if (jsonArray.size() == 0) {
-            return new int[0][0];
-        }
-
-        int[][] arr = new int[jsonArray.size()][];
-        for (int i = 0; i < arr.length; i++) {
-            JsonArray cols = jsonArray.get(i).asArray();
-            arr[i] = stringToIntegerArray(cols.toString());
-        }
-        return arr;
-    }
 
     public static void main(String[] args) {
-        
+        int[][] test0 = {{1,3},{8,10},{2,6},{15,18}};
+        System.out.println(int2dArrayToString(merge(test0)));
     }
 }
