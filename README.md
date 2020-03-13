@@ -19,3 +19,4 @@ Finished (In Order of Completion):
   - Problem 0020: Valid Parentheses (Easy) https://leetcode.com/problems/valid-parentheses/
   - Problem 0322: Coin Change (Medium) https://leetcode.com/problems/coin-change/
   - Problem 0669: Trim a Binary Search Tree https://leetcode.com/problems/trim-a-binary-search-tree
+  - Problem 0056: Merge Intervals https://leetcode.com/problems/merge-intervals/

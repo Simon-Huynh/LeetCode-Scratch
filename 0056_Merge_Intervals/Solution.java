@@ -20,15 +20,39 @@ class Solution {
         // overlapping if b1 is within the interval [a2, b2] inclusive. So if we do a sort on the 
         // collection based on the starting index of the intervals. Then we can just iterate through 
         // the sorted array of intervals and merge the ones based on conditions defined above. 
+
+        // Back to back merges FAIL. 
         
-        // First just use a collection library to sort. See if we can make it work. 
+        // First just use a collection library to sort. See if we can make it work. We can make a proper one later. 
+        if (intervals.length == 0 || intervals.length == 1) {
+            return intervals;
+        }
         Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
             public int compare(int[] a, int[] b) {
-                return Integer.compare(a[0], b[0]); 
+                return Integer.compare(a[0], b[0]);
             }
-        }); 
-        return intervals; 
+        });
+        ArrayList<int[]> result = new ArrayList<int[]>();
+        // Switch from changing 
+        for (int i = 0; i < intervals.length; i++) {
+            // if not the last interval, and beginning of second interval is within the first. 
+            // if ((i != intervals.length - 1) && (intervals[i][1] >= intervals[i + 1][0])) {
+            //     // use ternary operator to get the end of the new interval
+            //     int[] newInterval = { intervals[i][0], Math.max(intervals[i][1], intervals[i+1][1])};
+            //     result.add(newInterval);
+            //     intervals[i + 1] = newInterval;
+            // } else if (result.size() == 0 || result.get(result.size() - 1)[1] < intervals[i][0]) {
+            //     result.add(intervals[i]);
+            // }
+            if (result.size() == 0 || result.get(result.size()-1)[1] < intervals[i][0]) {
+                result.add(intervals[i]); 
+            } else {
+                result.get(result.size()-1)[1] = Math.max(result.get(result.size() - 1)[1], intervals[i][1]); 
+            }
+        }
+        int[][] resultArray = result.toArray(new int[result.size()][]); 
+        return resultArray;
     }
 
     public static String int2dArrayToString(int[][] array) {
