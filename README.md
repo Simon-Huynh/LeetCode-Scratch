@@ -18,5 +18,6 @@ Finished (In Order of Completion):
   - Problem 0033: Search in Rotated Sorted Array (Medium) https://leetcode.com/problems/search-in-rotated-sorted-array/
   - Problem 0020: Valid Parentheses (Easy) https://leetcode.com/problems/valid-parentheses/
   - Problem 0322: Coin Change (Medium) https://leetcode.com/problems/coin-change/
-  - Problem 0669: Trim a Binary Search Tree https://leetcode.com/problems/trim-a-binary-search-tree
-  - Problem 0056: Merge Intervals https://leetcode.com/problems/merge-intervals/
+  - Problem 0669: Trim a Binary Search Tree (Easy) https://leetcode.com/problems/trim-a-binary-search-tree
+  - Problem 0056: Merge Intervals (Medium) https://leetcode.com/problems/merge-intervals/
+  - Problem 0725: Split Linked List in Parts (Medium) https://leetcode.com/problems/split-linked-list-in-parts/
