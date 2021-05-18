@@ -21,3 +21,4 @@ Finished (In Order of Completion):
   - Problem 0669: Trim a Binary Search Tree (Easy) https://leetcode.com/problems/trim-a-binary-search-tree
   - Problem 0056: Merge Intervals (Medium) https://leetcode.com/problems/merge-intervals/
   - Problem 0725: Split Linked List in Parts (Medium) https://leetcode.com/problems/split-linked-list-in-parts/
+  - Problem 0387: First Unique Character in a String (Easy) https://leetcode.com/problems/first-unique-character-in-a-string/submissions/
