@@ -22,3 +22,4 @@ Finished (In Order of Completion):
   - Problem 0056: Merge Intervals (Medium) https://leetcode.com/problems/merge-intervals/
   - Problem 0725: Split Linked List in Parts (Medium) https://leetcode.com/problems/split-linked-list-in-parts/
   - Problem 0387: First Unique Character in a String (Easy) https://leetcode.com/problems/first-unique-character-in-a-string/submissions/
+  - Problem 1480: Running Sum of 1d Array (Easy) https://leetcode.com/problems/running-sum-of-1d-array/
